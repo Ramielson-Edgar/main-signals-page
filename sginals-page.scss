@@ -507,9 +507,9 @@ a {
     }
 
     .section__title {
-      font-size: var(--font-size-50);
+      font-size: var(--font-size-40);
       line-height: 51.59px;
-      max-width: 470px;
+      max-width: 340px;
     }
   }
 
@@ -646,6 +646,7 @@ a {
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center right;
+        transform: rotate(341deg);
       }
     }
   }
@@ -1318,7 +1319,7 @@ a {
 
     //notification banner
     .notification-banner {
-      background-image: url("/images/banner-notification-767.png");
+      background-image: url("../../images/banner-notification-767.png");
       background-position: center top;
       height: 650px;
 
