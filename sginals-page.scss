@@ -486,6 +486,7 @@ a {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(234px, 1fr));
       gap: 13px;
+      z-index: 3;
 
       &::before {
         display: block;
@@ -509,6 +510,7 @@ a {
         transform-style: preserve-3d;
         perspective: 1000px;
         animation: transform 20s ease-in-out infinite both alternate;
+        z-index: -1;
       }
 
       .grid__item:first-child {
@@ -549,17 +551,6 @@ a {
   }
 
   //TRADERS TYPE
-
-  .traders-type.blue-sphere::after {
-    top: 251px;
-    left: 650px;
-  }
-
-  .traders-type.blue-sphere::before {
-    top: 621px;
-    left: 43px;
-  }
-
   .traders-type {
     position: relative;
     background-image: url("../../icons/main-circle.svg");
@@ -832,10 +823,11 @@ a {
       z-index: 3;
 
       .slider__slogan {
-        font-size: var(--font-size-20);
+        font-size: var(--font-size-16);
       }
       .slider__header {
         position: relative;
+        gap: 26px;
 
         &::before {
           position: absolute;
@@ -847,7 +839,7 @@ a {
           transform: translate(-50%, -50%);
 
           font-size: var(--font-size-500);
-          color: rgba(108, 255, 216, 0.3);
+          color: rgba(108, 255, 216, 0.1);
           background-attachment: fixed;
           z-index: 2;
         }
@@ -898,7 +890,7 @@ a {
             align-items: center;
             justify-content: center;
 
-            margin-left: 10px;
+            margin-left: 26px;
 
             width: 40px;
             height: 40px;
@@ -1266,7 +1258,7 @@ a {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           padding: 30px;
-          gap: 30px 84px;
+          gap: 30px 0px;
 
           .benefits__item {
             .benefits__header {
@@ -1310,6 +1302,7 @@ a {
     }
 
     //traders-type
+    .traders-type.blue-sphere::after {left: 130px;}
     .traders-type {
       background-position: center center;
       background-size: contain;
