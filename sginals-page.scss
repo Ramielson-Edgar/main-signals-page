@@ -40,9 +40,7 @@
   --green-light: #6cffd8;
   --grey-light: #ebebeb;
 
-  --signals-btn-green: linear-gradient(96.27deg,
-      #5fff6f -17.31%,
-      #62ffe3 115.13%);
+  --signals-btn-green: linear-gradient(96.27deg, #5fff6f -17.31%, #62ffe3 115.13%);
 
   --text-accent: #9dbeff;
 
@@ -52,8 +50,7 @@
 
   //BLOB
   --blob-gradient: linear-gradient(142.66deg, #7a9fff 6.63%, #98a2ff 102.07%);
-  --blob-shades: inset -34px -12px 50px rgba(61, 92, 255, 0.74),
-    inset 17px 27px 50px rgba(255, 255, 255, 0.51);
+  --blob-shades: inset -34px -12px 50px rgba(61, 92, 255, 0.74), inset 17px 27px 50px rgba(255, 255, 255, 0.51);
 }
 
 html {
@@ -270,7 +267,10 @@ a {
 }
 
 .bx-chevron-right::before {
-  right: 5%;
+  right: 3%;
+}
+.bx-chevron-left::before {
+  left: clamp(42%, 10px, 50%);
 }
 
 .bx {
@@ -285,7 +285,7 @@ a {
 
 .owl-dots {
   position: absolute;
-  top: 120%;
+  top: 99%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -309,9 +309,16 @@ a {
   margin-left: 20%;
 }
 
+.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.owl-carousel .owl-stage-outer {
+  height: 500px;
+}
+
 // BLOB
 @keyframes transform {
-
   0%,
   100% {
     border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
@@ -343,7 +350,6 @@ a {
 }
 
 @keyframes movement {
-
   0%,
   100% {
     transform: none;
@@ -355,7 +361,6 @@ a {
 }
 
 .main-signals-page {
-
   //HERO SECTION
   .main-signals {
     overflow: hidden;
@@ -693,9 +698,7 @@ a {
               width: 35px;
               height: 35px;
 
-              background: linear-gradient(320.38deg,
-                  #6cffd8 0%,
-                  #3fc583 190.69%);
+              background: linear-gradient(320.38deg, #6cffd8 0%, #3fc583 190.69%);
               border-radius: 6px;
 
               .icon-check {
@@ -764,33 +767,41 @@ a {
       transform: translate(-50%, -50%);
 
       background: linear-gradient(142.66deg, #7a9fff 6.63%, #98a2ff 102.07%);
-      box-shadow: inset -34px -12px 50px rgba(61, 92, 255, 0.74),
-        inset 17px 27px 50px rgba(255, 255, 255, 0.51);
+      box-shadow: inset -34px -12px 50px rgba(61, 92, 255, 0.74), inset 17px 27px 50px rgba(255, 255, 255, 0.51);
     }
 
     .slider-item {
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 2 0 auto;
+      height: 100%;
+
       background-color: var(--white-text);
       padding: 50px 50px 30px 50px;
       border-radius: 9px;
       box-shadow: 1px 37px 50px -20px rgba(153, 142, 142, 0.2);
       z-index: 3;
 
-      &::before {
-        position: absolute;
-        display: block;
-        content: '"';
-
-        top: 60%;
-        left: 70%;
-
-        font-size: var(--font-size-500);
-        color: rgba(108, 255, 216, 0.3);
-        background-attachment: fixed;
-        z-index: 2;
+      .slider__slogan {
+        font-size: var(--font-size-20);
       }
-
       .slider__header {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: '"';
+
+          top: 200px;
+          left: 80%;
+          transform: translate(-50%, -50%);
+
+          font-size: var(--font-size-500);
+          color: rgba(108, 255, 216, 0.3);
+          background-attachment: fixed;
+          z-index: 2;
+        }
         .user-avatar {
           width: 82px;
           height: 82px;
@@ -844,9 +855,7 @@ a {
             height: 40px;
 
             border-radius: 50%;
-            background: linear-gradient(90.36deg,
-                rgba(167, 182, 255, 0.74) 65.89%,
-                #ffc1c1 110.12%);
+            background: linear-gradient(90.36deg, rgba(167, 182, 255, 0.74) 65.89%, #ffc1c1 110.12%);
             z-index: 3;
 
             &::before {
@@ -931,8 +940,15 @@ a {
 }
 
 @media (max-width: 1198px) {
-  .main-signals-page {
+    .owl-carousel .owl-stage-outer {
+        height: 520px;
+      }
+    
+      .owl-dots {
+        top: 100%;
+      }
 
+  .main-signals-page {
     .tool-benefits {
       .section__header {
         .section__title {
@@ -964,7 +980,6 @@ a {
   }
 
   .main-signals-page {
-
     //main-signals
     .main-signals {
       .section__header {
@@ -1091,17 +1106,23 @@ a {
       }
 
       .carousel-testimonial {
-        margin-bottom: 50px;
-
         .slider-item {
           width: auto;
           padding: 40px 40px 20px 40px;
 
-          &::before {
-            top: 44%;
-            left: 75%;
-            transform: translate(-50%, -50%);
-            font-size: 12.5rem;
+          .slider__slogan {
+            margin: 0 auto;
+          }
+
+          .slider__header {
+            justify-content: space-between;
+
+            &::before {
+              top: 150px;
+              left: 90%;
+              transform: translate(-50%, -50%);
+              font-size: 12.5rem;
+            }
           }
         }
       }
@@ -1175,7 +1196,6 @@ a {
   }
 
   .main-signals-page {
-
     //main-signals
     .main-signals {
       .main-signals-img {
@@ -1284,7 +1304,7 @@ a {
 
         .grid {
           .grid__item:last-child {
-            .section__content>p {
+            .section__content > p {
               margin-bottom: 20px !important;
             }
           }
@@ -1351,6 +1371,23 @@ a {
       background-position: center;
       background-size: 97%;
     }
+
+    //testimonial
+    .testimonial {
+      .section__header {
+
+      }
+
+      .carousel-testimonial {
+
+        .slider-item {
+          .slider__header::before {left: 96%;}
+        }
+
+    
+       
+      }
+    }
   }
 }
 
@@ -1368,7 +1405,6 @@ a {
   }
 
   .main-signals-page {
-
     //smart signals
     .smart-signals {
       .content {
@@ -1427,9 +1463,8 @@ a {
       }
 
       .carousel-testimonial {
-        .slider-item::before {
-          top: 53%;
-          transform: translate(-50%, -50%);
+        .slider-item .slider__header::before {
+          top: 179px;
           font-size: 18.75rem;
         }
       }
@@ -1568,7 +1603,6 @@ a {
   }
 
   .main-signals-page {
-
     //main signals
     .main-signals {
       padding: 50px 0 80px !important;
@@ -1612,8 +1646,8 @@ a {
 
       .carousel-testimonial {
         .slider-item {
-          &::before {
-            top: 50%;
+          .slider__header::before {
+             top: 150px;
             font-size: 12.5rem;
           }
 
@@ -1726,7 +1760,6 @@ a {
   }
 
   .main-signals-page {
-
     //tools benefits
     .tool-benefits {
       .grid {
@@ -1771,16 +1804,5 @@ a {
         }
       }
     }
-
-    //testimonial
-    .testimonial {
-      .carousel-testimonial {
-        .slider-item::before {
-          top: 45%;
-        }
-      }
-    }
   }
-
-
 }
