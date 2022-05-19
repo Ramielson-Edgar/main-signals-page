@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/css/animate.css" rel="stylesheet" />
     <!--ICONS-->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
 
@@ -384,7 +385,7 @@
             </div>
 
             <div class="carousel-testimonial owl-theme owl-carousel owl-drag">
-                <div class="slider-item">
+                <div class="slider-item ">
                     <div class="slider__header d-flex mb-3">
                         <img class="img-fluid user-avatar" src="./images/user-1.jpg" alt="user avatar" width="82"
                             height="82" />
@@ -408,7 +409,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="slider-item">
+                <div class="slider-item ">
                     <div class="slider__header d-flex mb-3">
                         <img class="img-fluid user-avatar" src="./images/user-2.jpg" alt="user avatar" width="82"
                             height="82" />
@@ -436,7 +437,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="slider-item">
+                <div class="slider-item ">
 
                     <div class="slider__header d-flex mb-3">
                         <img class="img-fluid user-avatar" src="./images/user-3.jpg" alt="user avatar" width="82"
@@ -461,7 +462,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="slider-item">
+                <div class="slider-item ">
 
                     <div class="slider__header d-flex mb-3">
                         <img class="img-fluid user-avatar" src="./images/user-4.jpg" alt="user avatar" width="82"
@@ -490,7 +491,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="slider-item">
+                <div class="slider-item ">
 
                     <div class="slider__header d-flex mb-3">
                         <img class="img-fluid user-avatar" src="./images/user-5.jpg" alt="user avatar" width="82"
@@ -511,7 +512,7 @@
                         <p class="slider__text">
                             I have been trading for 4 years and have made a few dollars here and there. I joined
                             adrofx
-                            two months ago. It’s amazing
+                            two months ago. It&#39;s amazing
                             for the first time I have made more than my Initial deposit just in the first week
                         </p>
                     </div>
@@ -745,6 +746,8 @@
         </section>
     </main>
 
+
+
     <!-- JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -760,6 +763,8 @@
     <script>
         $(document).ready(function () {
             $('.owl-carousel').owlCarousel({
+                animateOut: 'slideOutDown',
+                animateIn: 'flipInX',
                 center: true,
                 items: 2,
                 margin: 10,
@@ -798,6 +803,7 @@
                     },
                 },
             })
+
         })
     </script>
 </body>
