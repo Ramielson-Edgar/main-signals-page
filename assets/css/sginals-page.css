@@ -829,6 +829,12 @@ a {
   z-index: 1;
 }
 
+.main-signals-page .testimonial .owl-stage .owl-item:nth-child(4) .slider-item .slider__header .slider__stars::after,
+.main-signals-page .testimonial .owl-stage .owl-item:last-child .slider-item .slider__header .slider__stars::after,
+.main-signals-page .testimonial .owl-stage .owl-item:nth-child(2) .slider-item .slider__header .slider__stars::after {
+  width: 84px;
+}
+
 .main-signals-page .testimonial .section__header {
   position: relative;
   z-index: 5;
@@ -921,7 +927,7 @@ a {
 
 .main-signals-page .testimonial .slider-item .slider__header .slider__stars::after {
   background-color: var(--gold-color);
-  width: 33px;
+  width: 70px;
 }
 
 .main-signals-page .testimonial .slider-item .slider__header .slider__stars .percentages {

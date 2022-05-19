@@ -782,6 +782,7 @@ a {
   }
 
   //TESTIMONIALS
+
   .testimonial {
     position: relative;
     background-image: url("../../icons/main-circle.svg");
@@ -789,6 +790,12 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 1;
+
+    .owl-stage .owl-item:nth-child(4) .slider-item .slider__header .slider__stars::after,
+    .owl-stage .owl-item:last-child .slider-item .slider__header .slider__stars::after,
+    .owl-stage .owl-item:nth-child(2) .slider-item .slider__header .slider__stars::after {
+      width: 84px;
+    }
 
     .section__header {
       position: relative;
@@ -877,7 +884,7 @@ a {
 
           &::after {
             background-color: var(--gold-color);
-            width: 33px;
+            width: 70px;
           }
 
           .percentages {
