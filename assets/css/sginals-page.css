@@ -139,6 +139,10 @@ a {
   margin-bottom: 70px;
 }
 
+.ms-90 {
+  margin-left: 140px;
+}
+
 .wrap-5-6 {
   max-width: 600px;
 }
@@ -218,7 +222,7 @@ a {
   background-color: var(--blue-main);
 }
 
-.owl-nav {
+.carousel-testimonial .owl-nav {
   display: block;
   position: absolute;
   width: 100%;
@@ -270,7 +274,7 @@ a {
   background: transparent;
 }
 
-.owl-dots {
+.carousel-testimonial .owl-dots {
   position: absolute;
   top: 99%;
   left: 50%;
@@ -278,33 +282,33 @@ a {
           transform: translate(-50%, -50%);
 }
 
-.owl-theme .owl-nav [class*="owl-"]:hover {
+.carousel-testimonial .owl-nav [class*="owl-"]:hover {
   background-color: transparent;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
+.carousel-testimonial .owl-dots .owl-dot.active span,
+.carousel-testimonial .owl-dots .owl-dot:hover span {
   background: var(--signals-btn-green);
 }
 
-.owl-theme .owl-dots .owl-dot span {
+.carousel-testimonial .owl-dots .owl-dot span {
   width: 30px !important;
   height: 2px !important;
   border-radius: 0 !important;
 }
 
-.owl-carousel .owl-stage {
+.carousel-testimonial .owl-stage {
   margin-left: 20%;
 }
 
-.owl-carousel .owl-stage {
+.carousel-testimonial .owl-stage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.owl-carousel .owl-stage-outer {
-  height: 430px;
+.carousel-testimonial .owl-stage-outer {
+  height: 440px;
 }
 
 @-webkit-keyframes transform {
@@ -578,11 +582,19 @@ a {
 }
 
 .main-signals-page .traders-type .split {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   gap: 50px;
+}
+
+.main-signals-page .traders-type .split::after {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 51%;
 }
 
 .main-signals-page .traders-type .split .grid {
@@ -652,13 +664,18 @@ a {
 }
 
 .main-signals-page .signals-tools .grid .grid__item {
-  padding: 50px;
+  padding: 20px;
   border-radius: 3px;
 }
 
 .main-signals-page .signals-tools .grid .grid__item .grid__img img {
   display: block;
   margin: 0 auto;
+}
+
+.main-signals-page .signals-tools .grid .grid__item .grid__body .grid__body-text {
+  font-size: var(--font-size-14);
+  line-height: 18px;
 }
 
 .main-signals-page .signals-tools .grid .grid__item .grid__body .btn-ghost {
@@ -834,7 +851,7 @@ a {
       -ms-flex: 2 0 auto;
           flex: 2 0 auto;
   height: 100%;
-  background-color: var(--white-text);
+  background-color: white;
   padding: 50px 50px 30px 50px;
   border-radius: 9px;
   -webkit-box-shadow: 1px 37px 50px -20px rgba(153, 142, 142, 0.2);
@@ -994,12 +1011,21 @@ a {
   background: linear-gradient(96.27deg, #7a9fff -17.31%, #62ffe3 115.13%);
 }
 
+.main-signals-page .platforms .section__content {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.main-signals-page .platforms .section__content .content__header {
+  font-size: var(--font-size-24);
+}
+
 @media (max-width: 1198px) {
-  .owl-carousel .owl-stage-outer {
-    height: 520px;
+  .carousel-testimonial .owl-stage-outer {
+    height: 440px;
   }
-  .owl-dots {
-    top: 100%;
+  .carousel-testimonial .owl-dots {
+    top: 103%;
   }
   .main-signals-page .tool-benefits .section__header .section__title {
     font-size: var(--font-size-30);
@@ -1016,7 +1042,7 @@ a {
   .carousel-testimonial .owl-stage-outer {
     height: 400px;
   }
-  .carousel-testimonial .owl-carousel .owl-stage {
+  .carousel-testimonial .owl-stage {
     margin-left: unset;
   }
   .carousel-testimonial .owl-dots {
@@ -1036,6 +1062,12 @@ a {
   }
   .main-signals-page .main-signals .section__header .section__header-description {
     font-size: var(--font-size-20);
+  }
+  .main-signals-page .traders-type .split::after {
+    left: 0;
+  }
+  .main-signals-page .smart-signals .section__header::after {
+    left: clamp(50px, 10px, 100px);
   }
   .main-signals-page .signals-benefits {
     margin-bottom: 70px;
@@ -1195,13 +1227,16 @@ a {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 766.98px) {
   body {
     font-size: var(--font-size-14);
     line-height: 21px;
   }
+  .carousel-testimonial .owl-dots {
+    top: 105%;
+  }
   .carousel-testimonial .owl-stage-outer {
-    height: 360px;
+    height: 330px;
   }
   .section__header {
     display: -webkit-box;
@@ -1263,11 +1298,11 @@ a {
   .main-signals-page .tool-benefits {
     height: unset;
   }
+  .main-signals-page .tool-benefits .section__header {
+    margin-top: 0px;
+  }
   .main-signals-page .tool-benefits .section__header .section__title {
     max-width: 280px;
-  }
-  .main-signals-page .traders-type.blue-sphere::after {
-    left: 130px;
   }
   .main-signals-page .traders-type {
     background-position: center center;
@@ -1374,13 +1409,22 @@ a {
   .main-signals-page .testimonial .carousel-testimonial .slider-item .slider__header::before {
     left: 96%;
   }
+  .main-signals-page .platforms .section__content {
+    margin-top: 50px;
+  }
 }
 
 @media (max-width: 575.98px) {
   .section-padding {
     padding: 50px 0;
   }
-  .owl-theme .owl-dots .owl-dot span {
+  .carousel-testimonial .owl-stage-outer {
+    height: 400px;
+  }
+  .carousel-testimonial .owl-dots {
+    top: clamp(100%, 50%, 113%);
+  }
+  .carousel-testimonial .owl-dots .owl-dot span {
     width: 20px !important;
   }
   .section__header {
@@ -1454,6 +1498,7 @@ a {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+    max-width: 100%;
   }
   .main-signals-page .signals-tools .wrapper {
     -webkit-box-align: unset;
@@ -1486,6 +1531,7 @@ a {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    text-align: left;
     gap: 5px;
   }
   .main-signals-page .signals-tools .wrapper .grid .grid__item .grid__body .btn-ghost {
@@ -1552,8 +1598,11 @@ a {
 }
 
 @media (max-width: 375px) {
-  .owl-theme .owl-dots {
-    top: 113%;
+  .carousel-testimonial .owl-dots {
+    top: 101%;
+  }
+  .carousel-testimonial .owl-dots .owl-dot span {
+    width: 10px !important;
   }
   .main-signals-page .main-signals {
     padding: 50px 0 80px !important;
@@ -1659,11 +1708,11 @@ a {
 }
 
 @media (max-width: 320px) {
-  .owl-theme .owl-dots {
-    top: 109%;
+  .carousel-testimonial .owl-dots {
+    top: 102%;
   }
-  .owl-theme .owl-dots .owl-dot span {
-    width: 10px !important;
+  .carousel-testimonial .owl-stage-outer {
+    height: 410px;
   }
   .main-signals-page .tool-benefits .grid .grid__item {
     padding: 20px 10px;
